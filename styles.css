@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap');
 
 * {
@@ -17,35 +18,90 @@ body {
     overflow-x: hidden;
 }
 
+img {
+    max-width: 100%;
+}
+
 section {
     scroll-margin-top: 20px;
 }
 
+/* SELO POLÍTICO */
+
+.selo-politico {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-width: 0;
+    padding: 10px 8%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    line-height: 1.4;
+    background: #310a12;
+}
+
+.estrela,
+.selo-estrela {
+    position: static;
+    color: #ff3030;
+    font-size: 28px;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.selo-nome {
+    color: #f5e9df;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.selo-frase {
+    max-width: 100%;
+    color: #c6a5ab;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/* CABEÇALHO */
+
 .cabecalho {
     min-height: 80px;
-    padding: 0 8%;
+    padding: 16px 8%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 25px;
+    flex-wrap: wrap;
+    gap: 20px;
     background: #4b101b;
     border-bottom: 1px solid #80532f;
 }
 
 .logo {
+    display: block;
+    flex-shrink: 0;
+    max-width: 100%;
     color: #e1bf75;
     font-family: 'Oswald', sans-serif;
-    font-size: 30px;
+    font-size: clamp(23px, 3vw, 30px);
     font-weight: 700;
     text-decoration: none;
-    position: relative;
-    right: 90px;
-    top: -10;
+    position: static;
+    white-space: nowrap;
 }
 
 nav {
     display: flex;
-    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
 }
 
 nav a {
@@ -60,7 +116,6 @@ nav a {
 nav a:hover {
     color: #e1bf75;
 }
-
 
 /* 01 — CAPA */
 
@@ -123,7 +178,7 @@ nav a:hover {
 
 .capa-grid {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
     align-items: center;
     gap: 9%;
     margin: 80px 0;
@@ -141,6 +196,7 @@ h1 {
     font-size: clamp(58px, 7vw, 105px);
     line-height: 0.95;
     letter-spacing: -2px;
+    overflow-wrap: anywhere;
 }
 
 h1 span {
@@ -187,6 +243,7 @@ h1 span {
 }
 
 .capa-vozes {
+    min-width: 0;
     padding-left: 25px;
     border-left: 1px solid #dfbd7360;
 }
@@ -229,7 +286,6 @@ h1 span {
     letter-spacing: 2px;
 }
 
-
 /* TÍTULOS DAS SEÇÕES */
 
 .debate h2,
@@ -248,6 +304,10 @@ h1 span {
     color: #8c2534;
 }
 
+#Star {
+    color: red;
+}
+
 .introducao {
     max-width: 680px;
     margin-bottom: 45px;
@@ -255,7 +315,6 @@ h1 span {
     font-size: 15px;
     line-height: 1.9;
 }
-
 
 /* 02 — DEBATE POLÍTICO */
 
@@ -266,14 +325,19 @@ h1 span {
 
 .colunas-politicas {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 25px;
-    align-items: stretch;
+    align-items: start;
 }
 
 .coluna {
+    height: 850px;
+    min-width: 0;
     padding: 35px;
+    overflow-y: auto;
     border: 1px solid #c8b8a4;
+    scrollbar-width: thin;
+    scrollbar-color: #8c2534 #e5dcd0;
 }
 
 .coluna-esquerda {
@@ -314,6 +378,7 @@ h1 span {
 }
 
 .ponto > span {
+    flex-shrink: 0;
     color: #8c2534;
     font-family: 'Oswald', sans-serif;
     font-size: 23px;
@@ -322,12 +387,21 @@ h1 span {
 .ponto h4 {
     margin-bottom: 8px;
     font-size: 15px;
+    overflow-wrap: anywhere;
 }
 
 .ponto p {
     color: #554541;
     font-size: 13px;
     line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.coluna .ponto h5 {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.75;
+    overflow-wrap: anywhere;
 }
 
 .fonte {
@@ -340,7 +414,8 @@ h1 span {
     color: #8c2534;
     font-size: 10px;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 0;
+    line-height: 1.6;
 }
 
 .fonte a {
@@ -357,7 +432,6 @@ h1 span {
     font-size: 11px;
     line-height: 1.7;
 }
-
 
 /* 03 — MANIFESTO */
 
@@ -421,6 +495,68 @@ h1 span {
     line-height: 1.5;
 }
 
+/* MANIFESTO E RETRATOS */
+
+.manifesto-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 40px;
+    align-items: start;
+    width: 100%;
+}
+
+.manifesto-texto {
+    grid-column: 1;
+    min-width: 0;
+}
+
+.simbolos-luta {
+    grid-column: 2;
+    grid-row: 1;
+    position: sticky;
+    top: 30px;
+    align-self: start;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 16px;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+}
+
+.simbolos-luta > .identificador {
+    grid-column: 1 / -1;
+    margin: 0;
+}
+
+.simbolo {
+    min-width: 0;
+    margin: 0;
+}
+
+.simbolo img {
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: contain;
+    object-position: center;
+    filter: grayscale(100%);
+    position: static;
+}
+
+.simbolo-info h3 {
+    font-size: 16px;
+    overflow-wrap: anywhere;
+}
+
+.simbolo-info p {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+#Enquanto {
+    text-align: justify;
+}
 
 /* 04 — MÚSICAS */
 
@@ -457,6 +593,75 @@ h1 span {
     line-height: 1.8;
 }
 
+/* LISTA DE MÚSICAS */
+
+.faixas-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 40px;
+}
+
+.faixa {
+    display: flex;
+    gap: 24px;
+    min-width: 0;
+    padding: 26px;
+    border: 1px solid rgba(36, 27, 25, 0.18);
+    background: rgba(36, 27, 25, 0.035);
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.faixa:hover {
+    background: rgba(36, 27, 25, 0.07);
+    border-color: rgba(36, 27, 25, 0.45);
+}
+
+.faixa-numero {
+    flex-shrink: 0;
+    min-width: 42px;
+    font-size: 28px;
+    font-weight: 800;
+    opacity: 0.45;
+}
+
+.faixa-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.faixa-info h3 {
+    margin: 0 0 8px;
+    font-size: 23px;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+}
+
+.faixa-artista {
+    margin-bottom: 16px;
+    opacity: 0.65;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.faixa-info p:not(.faixa-artista) {
+    max-width: 760px;
+    line-height: 1.8;
+}
+
+.faixa-info a {
+    display: inline-block;
+    max-width: 100%;
+    margin-top: 12px;
+    padding-bottom: 5px;
+    color: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    overflow-wrap: anywhere;
+}
 
 /* RODAPÉ */
 
@@ -476,24 +681,65 @@ footer span:first-child {
     letter-spacing: 2px;
 }
 
+/* TABLETS */
 
-/* CELULAR */
+@media (max-width: 800px) {
+    .manifesto-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 35px;
+    }
+
+    .manifesto-texto,
+    .simbolos-luta {
+        grid-column: 1;
+    }
+
+    .simbolos-luta {
+        grid-row: auto;
+        position: static;
+    }
+
+    .simbolo img {
+        height: 180px;
+    }
+}
+
+/* CELULARES */
 
 @media (max-width: 700px) {
+    .selo-politico {
+        padding: 10px 6%;
+        gap: 8px;
+    }
+
+    .estrela,
+    .selo-estrela {
+        font-size: 25px;
+    }
+
+    .selo-frase {
+        flex: 1 1 180px;
+        font-size: 8px;
+        letter-spacing: 0.2px;
+    }
+
     .cabecalho {
+        justify-content: center;
         flex-wrap: wrap;
         gap: 18px;
-        padding: 18px 6%;
+        padding: 18px 5%;
     }
 
     .logo {
-        font-size: 27px;
+        font-size: clamp(22px, 6vw, 27px);
+        white-space: nowrap;
     }
 
     nav {
         width: 100%;
+        justify-content: center;
         flex-wrap: wrap;
-        gap: 15px;
+        gap: 14px;
     }
 
     nav a {
@@ -516,13 +762,13 @@ footer span:first-child {
     }
 
     .capa-grid {
-        grid-template-columns: 1fr;
-        gap: 55px;
-        margin: 65px 0;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 45px;
+        margin: 60px 0;
     }
 
     h1 {
-        font-size: clamp(49px, 12vw, 75px);
+        font-size: clamp(46px, 12vw, 75px);
         letter-spacing: -1px;
     }
 
@@ -568,12 +814,15 @@ footer span:first-child {
     }
 
     .colunas-politicas {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 20px;
     }
 
     .coluna {
+        height: auto;
+        max-height: none;
         padding: 25px 20px;
+        overflow-y: visible;
     }
 
     .coluna h3 {
@@ -597,8 +846,45 @@ footer span:first-child {
         padding-left: 18px;
     }
 
+    .simbolos-luta {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px 12px;
+    }
+
+    .simbolo img {
+        height: 160px;
+        object-fit: contain;
+        object-position: center;
+    }
+
+    .simbolo-info h3 {
+        font-size: 14px;
+    }
+
+    .simbolo-info p {
+        font-size: 11px;
+    }
+
     .musicas-vazio {
         padding: 35px 18px;
+    }
+
+    .faixa {
+        gap: 14px;
+        padding: 18px;
+    }
+
+    .faixa-numero {
+        min-width: 28px;
+        font-size: 21px;
+    }
+
+    .faixa-info h3 {
+        font-size: 18px;
+    }
+
+    .faixa-artista {
+        font-size: 11px;
     }
 
     footer {
@@ -607,370 +893,38 @@ footer span:first-child {
         line-height: 1.8;
     }
 }
-.estrela {
-    color: #ff0000;
-    font-size: px;
-    position: relative;
-    bottom: 4770px;
-    left: 20px;
 
-}
-.selo-politico {
-    position: absolute;
-    top: 20px;
-    left: 16px;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    line-height: 1;
-    gap: 3px;
-}
+/* CELULARES PEQUENOS */
 
-.selo-estrela {
-    color: #ff3030;
-    font-size: 40px;
-}
-
-.selo-nome {
-    color: #f5e9df;
-    font-family: 'Oswald', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 2px;
-}
-
-.selo-frase {
-    color: #c6a5ab;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 7px;
-    letter-spacing: 1px;
-}
-/* MANIFESTO: TEXTO À ESQUERDA, RETRATOS À DIREITA */
-
-.manifesto-layout {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
-    gap: 40px;
-    align-items: start;
-    width: 100%;
-}
-
-.manifesto-texto {
-    grid-column: 1;
-    min-width: 0;
-}
-
-.simbolos-luta {
-    grid-column: 2;
-    grid-row: 1;
-    position: sticky;
-    top: 30px;
-    align-self: start;
-    width: 100%;
-    min-width: 0;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px 16px;
-    margin: 0;
-}
-
-.simbolos-luta > .identificador {
-    grid-column: 1 / -1;
-    margin: 0;
-}
-
-.simbolo {
-    min-width: 0;
-    margin: 0;
-}
-
-.simbolo img {
-    display: block;
-    width: 100%;
-    height: 230px;
-    object-fit: cover;
-    object-position: center top;
-    filter: grayscale(100%);
-}
-
-.simbolo-info h3 {
-    font-size: 16px;
-    overflow-wrap: anywhere;
-}
-
-.simbolo-info p {
-    font-size: 12px;
-    line-height: 1.5;
-}
-
-@media (max-width: 800px) {
-    .manifesto-layout {
-        grid-template-columns: 1fr !important;
+@media (max-width: 380px) {
+    .logo {
+        font-size: 22px;
     }
 
-    .manifesto-texto,
-    .simbolos-luta {
-        grid-column: 1;
+    nav {
+        gap: 11px;
+    }
+
+    nav a {
+        font-size: 9px;
+        letter-spacing: 0.5px;
     }
 
     .simbolos-luta {
-        grid-row: auto;
-        position: static;
-    }
-}
-.simbolo img {
-    display: block;
-    width: 100%;
-    height: 160px;
-    object-fit: contain;
-    object-position: center;
-    filter: grayscale(100%);
-    position: relative;
-    right: 310px;
-}
-#Enquanto{
-    text-align: justify;
-
-
-
-}
-
-
-
-
-/* COLUNAS POLÍTICAS */
-
-.colunas-politicas {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: start;
-    gap: 25px;
-}
-
-.coluna {
-    height: 850px;
-    min-width: 0;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: #8c2534 #e5dcd0;
-}
-
-/* ROLAGEM E ORGANIZAÇÃO DO TEXTO */
-
-.coluna .ponto {
-    min-width: 0;
-}
-
-.coluna .ponto h4,
-.coluna .ponto h5 {
-    overflow-wrap: anywhere;
-}
-
-.coluna .ponto h5 {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 400;
-    line-height: 1.75;
-}
-
-.coluna .ponto > span {
-    flex-shrink: 0;
-}
-
-.fonte {
-    line-height: 1.6;
-    letter-spacing: 0;
-}
-
-.fonte a {
-    overflow-wrap: anywhere;
-}
-
-/* CELULAR */
-
-@media (max-width: 700px) {
-    .colunas-politicas {
         grid-template-columns: minmax(0, 1fr);
-    }
-
-    .coluna {
-        height: auto;
-        max-height: none;
-        overflow-y: visible;
-    }
-}
-
-/* MANIFESTO: TEXTO À ESQUERDA, RETRATOS À DIREITA */
-
-.manifesto-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 40px;
-    align-items: start;
-    width: 100%;
-}
-
-.manifesto-texto {
-    grid-column: 1;
-    min-width: 0;
-}
-
-.simbolos-luta {
-    grid-column: 2;
-    grid-row: 1;
-    position: sticky;
-    top: 30px;
-    align-self: start;
-    width: 100%;
-    min-width: 0;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px 16px;
-    margin: 0;
-}
-
-.simbolos-luta > .identificador {
-    grid-column: 1 / -1;
-    margin: 0;
-}
-
-.simbolo {
-    min-width: 0;
-    margin: 0;
-}
-
-.simbolo img {
-    display: block;
-    width: 100%;
-    height: 230px;
-    object-fit: contain;
-    object-position: center;
-    filter: grayscale(100%);
-    position: static;
-}
-
-.simbolo-info h3 {
-    font-size: 16px;
-    overflow-wrap: anywhere;
-}
-
-.simbolo-info p {
-    font-size: 12px;
-    line-height: 1.5;
-}
-
-#Enquanto {
-    text-align: justify;
-}
-
-/* MANIFESTO NO CELULAR */
-
-@media (max-width: 800px) {
-    .manifesto-layout {
-        grid-template-columns: minmax(0, 1fr);
-    }
-
-    .manifesto-texto,
-    .simbolos-luta {
-        grid-column: 1;
-    }
-
-    .simbolos-luta {
-        grid-row: auto;
-        position: static;
     }
 
     .simbolo img {
-        height: 160px;
-        object-fit: contain;
-        object-position: center;
+        height: 190px;
     }
-}
 
-
-
-
-```css
-.faixas-lista {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    margin-top: 40px;
-}
-
-.faixa {
-    display: flex;
-    gap: 24px;
-    padding: 26px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    background: rgba(255, 255, 255, 0.035);
-    transition: background 0.3s, border-color 0.3s;
-}
-
-.faixa:hover {
-    background: rgba(255, 255, 255, 0.07);
-    border-color: rgba(255, 255, 255, 0.45);
-}
-
-.faixa-numero {
-    font-size: 28px;
-    font-weight: 800;
-    opacity: 0.45;
-    min-width: 42px;
-}
-
-.faixa-info {
-    flex: 1;
-}
-
-.faixa-info h3 {
-    margin: 0 0 8px;
-    font-size: 23px;
-    text-transform: uppercase;
-}
-
-.faixa-artista {
-    margin-bottom: 16px;
-    opacity: 0.65;
-    font-size: 13px;
-    letter-spacing: 1px;
-}
-
-.faixa-info p:not(.faixa-artista) {
-    line-height: 1.8;
-    max-width: 760px;
-}
-
-.faixa-info a {
-    display: inline-block;
-    margin-top: 12px;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-decoration: none;
-    color: inherit;
-    border-bottom: 1px solid currentColor;
-    padding-bottom: 5px;
-}
-
-@media (max-width: 600px) {
     .faixa {
-        gap: 14px;
-        padding: 18px;
+        gap: 10px;
+        padding: 14px;
     }
 
     .faixa-numero {
-        font-size: 21px;
-        min-width: 28px;
-    }
-
-    .faixa-info h3 {
+        min-width: 22px;
         font-size: 18px;
     }
-}
-
-
-#Star{
-    color: red;
-
-
 }
