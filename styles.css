@@ -1,0 +1,976 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f1ece3;
+    color: #241b19;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+section {
+    scroll-margin-top: 20px;
+}
+
+.cabecalho {
+    min-height: 80px;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: #4b101b;
+    border-bottom: 1px solid #80532f;
+}
+
+.logo {
+    color: #e1bf75;
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    position: relative;
+    right: 90px;
+    top: -10;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #f1ece3;
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #e1bf75;
+}
+
+
+/* 01 — CAPA */
+
+.capa {
+    min-height: 780px;
+    padding: 35px 8% 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    color: #f5eee3;
+    background: linear-gradient(115deg, #5c101e, #390912 65%, #24070d);
+}
+
+.capa::before,
+.capa::after {
+    content: "";
+    position: absolute;
+    border: 1px solid #c4a05b35;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.capa::before {
+    width: 430px;
+    height: 430px;
+    right: -130px;
+    top: 150px;
+}
+
+.capa::after {
+    width: 320px;
+    height: 320px;
+    right: -75px;
+    top: 205px;
+}
+
+.capa-topo,
+.capa-grid,
+.rodape-capa {
+    position: relative;
+    z-index: 1;
+}
+
+.capa-topo,
+.rodape-capa {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.numero,
+.edicao {
+    color: #dfbd73;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.capa-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 9%;
+    margin: 80px 0;
+}
+
+.subtitulo {
+    margin-bottom: 22px;
+    color: #dfbd73;
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(58px, 7vw, 105px);
+    line-height: 0.95;
+    letter-spacing: -2px;
+}
+
+h1 span {
+    display: block;
+    color: #dfbd73;
+}
+
+.linha {
+    width: 100px;
+    height: 3px;
+    margin: 30px 0 22px;
+    background: #dfbd73;
+}
+
+.descricao {
+    max-width: 450px;
+    color: #e2d3cb;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.botao {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 30px;
+    padding: 16px 22px;
+    background: #dfbd73;
+    color: #390912;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.botao:hover {
+    background: #f0d69b;
+    transform: translateY(-2px);
+}
+
+.botao span {
+    font-size: 20px;
+}
+
+.capa-vozes {
+    padding-left: 25px;
+    border-left: 1px solid #dfbd7360;
+}
+
+.identificador {
+    margin-bottom: 25px;
+    color: #8c2534;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    line-height: 1.7;
+}
+
+.capa-vozes .identificador {
+    color: #dfbd73;
+}
+
+.capa-vozes blockquote {
+    margin-bottom: 30px;
+    color: #e2d3cb;
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(18px, 2vw, 25px);
+    line-height: 1.6;
+}
+
+.capa-vozes blockquote span {
+    display: block;
+    margin-top: 12px;
+    color: #dfbd73;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.rodape-capa {
+    border-top: 1px solid #dfbd7345;
+    padding-top: 20px;
+    color: #d7c5b8;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+
+/* TÍTULOS DAS SEÇÕES */
+
+.debate h2,
+.manifesto h2,
+.musicas h2 {
+    margin-bottom: 25px;
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.1;
+}
+
+.debate h2 span,
+.manifesto h2 span,
+.musicas h2 span {
+    display: block;
+    color: #8c2534;
+}
+
+.introducao {
+    max-width: 680px;
+    margin-bottom: 45px;
+    color: #554541;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+
+/* 02 — DEBATE POLÍTICO */
+
+.debate {
+    padding: 100px 8%;
+    background: #f1ece3;
+}
+
+.colunas-politicas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    align-items: stretch;
+}
+
+.coluna {
+    padding: 35px;
+    border: 1px solid #c8b8a4;
+}
+
+.coluna-esquerda {
+    border-top: 4px solid #851f30;
+}
+
+.coluna-direita {
+    border-top: 4px solid #241b19;
+}
+
+.etiqueta {
+    margin-bottom: 15px;
+    color: #8c2534;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.coluna h3 {
+    margin-bottom: 18px;
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(25px, 3vw, 36px);
+    line-height: 1.2;
+}
+
+.texto-coluna {
+    margin-bottom: 30px;
+    color: #554541;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.ponto {
+    display: flex;
+    gap: 16px;
+    padding: 22px 0;
+    border-top: 1px solid #d6c9b9;
+}
+
+.ponto > span {
+    color: #8c2534;
+    font-family: 'Oswald', sans-serif;
+    font-size: 23px;
+}
+
+.ponto h4 {
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.ponto p {
+    color: #554541;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.fonte {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #d6c9b9;
+    color: #8c2534;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.fonte a {
+    color: #554541;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+}
+
+.aviso {
+    margin-top: 25px;
+    color: #786861;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+
+/* 03 — MANIFESTO */
+
+.manifesto {
+    padding: 100px 8%;
+    background: #e5dcd0;
+}
+
+.manifesto > h2 {
+    max-width: 750px;
+}
+
+.abertura,
+.manifesto > p:not(.identificador) {
+    max-width: 780px;
+    margin-bottom: 20px;
+    color: #554541;
+    font-size: 16px;
+    line-height: 2;
+}
+
+.abertura {
+    font-size: 18px;
+}
+
+.tema-manifesto {
+    max-width: 850px;
+    margin-top: 55px;
+    padding-top: 25px;
+    border-top: 1px solid #bba995;
+}
+
+.tema-manifesto > span {
+    color: #8c2534;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.tema-manifesto h3 {
+    margin: 15px 0;
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(25px, 3vw, 36px);
+}
+
+.tema-manifesto p {
+    max-width: 750px;
+    color: #554541;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.frase-final {
+    max-width: 850px;
+    margin-top: 65px;
+    padding: 25px 0 25px 25px;
+    border-left: 4px solid #8c2534;
+    color: #40101b;
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(24px, 3vw, 36px);
+    line-height: 1.5;
+}
+
+
+/* 04 — MÚSICAS */
+
+.musicas {
+    padding: 100px 8%;
+    background: #f1ece3;
+}
+
+.musicas h2 span {
+    color: #851f30;
+}
+
+.musicas-vazio {
+    margin-top: 35px;
+    padding: 60px 25px;
+    border: 1px solid #bba16d;
+    background: #e5dcd0;
+    color: #785e37;
+}
+
+.musicas-vazio > span {
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.musicas-vazio h3 {
+    margin: 20px 0 10px;
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(22px, 3vw, 34px);
+}
+
+.musicas-vazio p {
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* RODAPÉ */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 30px 8%;
+    background: #310a12;
+    color: #e7d8c5;
+    font-size: 12px;
+}
+
+footer span:first-child {
+    color: #dfbd73;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 700px) {
+    .cabecalho {
+        flex-wrap: wrap;
+        gap: 18px;
+        padding: 18px 6%;
+    }
+
+    .logo {
+        font-size: 27px;
+    }
+
+    nav {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .capa {
+        min-height: auto;
+        padding: 28px 7% 22px;
+    }
+
+    .capa-topo {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .numero,
+    .edicao {
+        font-size: 9px;
+    }
+
+    .capa-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+        margin: 65px 0;
+    }
+
+    h1 {
+        font-size: clamp(49px, 12vw, 75px);
+        letter-spacing: -1px;
+    }
+
+    .subtitulo {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .descricao {
+        font-size: 14px;
+    }
+
+    .capa-vozes {
+        padding: 25px 0 0;
+        border-left: none;
+        border-top: 1px solid #dfbd7360;
+    }
+
+    .capa-vozes blockquote {
+        font-size: 21px;
+    }
+
+    .rodape-capa {
+        flex-wrap: wrap;
+        font-size: 9px;
+        line-height: 1.8;
+    }
+
+    .debate,
+    .manifesto,
+    .musicas {
+        padding: 70px 7%;
+    }
+
+    .debate h2,
+    .manifesto h2,
+    .musicas h2 {
+        font-size: clamp(35px, 9vw, 46px);
+    }
+
+    .introducao {
+        font-size: 14px;
+    }
+
+    .colunas-politicas {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .coluna {
+        padding: 25px 20px;
+    }
+
+    .coluna h3 {
+        font-size: 30px;
+    }
+
+    .abertura,
+    .manifesto > p:not(.identificador) {
+        font-size: 14px;
+    }
+
+    .tema-manifesto {
+        margin-top: 40px;
+    }
+
+    .tema-manifesto p {
+        font-size: 14px;
+    }
+
+    .frase-final {
+        padding-left: 18px;
+    }
+
+    .musicas-vazio {
+        padding: 35px 18px;
+    }
+
+    footer {
+        flex-direction: column;
+        padding: 25px 7%;
+        line-height: 1.8;
+    }
+}
+.estrela {
+    color: #ff0000;
+    font-size: px;
+    position: relative;
+    bottom: 4770px;
+    left: 20px;
+
+}
+.selo-politico {
+    position: absolute;
+    top: 20px;
+    left: 16px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+    gap: 3px;
+}
+
+.selo-estrela {
+    color: #ff3030;
+    font-size: 40px;
+}
+
+.selo-nome {
+    color: #f5e9df;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.selo-frase {
+    color: #c6a5ab;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 7px;
+    letter-spacing: 1px;
+}
+/* MANIFESTO: TEXTO À ESQUERDA, RETRATOS À DIREITA */
+
+.manifesto-layout {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 40px;
+    align-items: start;
+    width: 100%;
+}
+
+.manifesto-texto {
+    grid-column: 1;
+    min-width: 0;
+}
+
+.simbolos-luta {
+    grid-column: 2;
+    grid-row: 1;
+    position: sticky;
+    top: 30px;
+    align-self: start;
+    width: 100%;
+    min-width: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 16px;
+    margin: 0;
+}
+
+.simbolos-luta > .identificador {
+    grid-column: 1 / -1;
+    margin: 0;
+}
+
+.simbolo {
+    min-width: 0;
+    margin: 0;
+}
+
+.simbolo img {
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    object-position: center top;
+    filter: grayscale(100%);
+}
+
+.simbolo-info h3 {
+    font-size: 16px;
+    overflow-wrap: anywhere;
+}
+
+.simbolo-info p {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+@media (max-width: 800px) {
+    .manifesto-layout {
+        grid-template-columns: 1fr !important;
+    }
+
+    .manifesto-texto,
+    .simbolos-luta {
+        grid-column: 1;
+    }
+
+    .simbolos-luta {
+        grid-row: auto;
+        position: static;
+    }
+}
+.simbolo img {
+    display: block;
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+    object-position: center;
+    filter: grayscale(100%);
+    position: relative;
+    right: 310px;
+}
+#Enquanto{
+    text-align: justify;
+
+
+
+}
+
+
+
+
+/* COLUNAS POLÍTICAS */
+
+.colunas-politicas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 25px;
+}
+
+.coluna {
+    height: 850px;
+    min-width: 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #8c2534 #e5dcd0;
+}
+
+/* ROLAGEM E ORGANIZAÇÃO DO TEXTO */
+
+.coluna .ponto {
+    min-width: 0;
+}
+
+.coluna .ponto h4,
+.coluna .ponto h5 {
+    overflow-wrap: anywhere;
+}
+
+.coluna .ponto h5 {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.75;
+}
+
+.coluna .ponto > span {
+    flex-shrink: 0;
+}
+
+.fonte {
+    line-height: 1.6;
+    letter-spacing: 0;
+}
+
+.fonte a {
+    overflow-wrap: anywhere;
+}
+
+/* CELULAR */
+
+@media (max-width: 700px) {
+    .colunas-politicas {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .coluna {
+        height: auto;
+        max-height: none;
+        overflow-y: visible;
+    }
+}
+
+/* MANIFESTO: TEXTO À ESQUERDA, RETRATOS À DIREITA */
+
+.manifesto-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 40px;
+    align-items: start;
+    width: 100%;
+}
+
+.manifesto-texto {
+    grid-column: 1;
+    min-width: 0;
+}
+
+.simbolos-luta {
+    grid-column: 2;
+    grid-row: 1;
+    position: sticky;
+    top: 30px;
+    align-self: start;
+    width: 100%;
+    min-width: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 16px;
+    margin: 0;
+}
+
+.simbolos-luta > .identificador {
+    grid-column: 1 / -1;
+    margin: 0;
+}
+
+.simbolo {
+    min-width: 0;
+    margin: 0;
+}
+
+.simbolo img {
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: contain;
+    object-position: center;
+    filter: grayscale(100%);
+    position: static;
+}
+
+.simbolo-info h3 {
+    font-size: 16px;
+    overflow-wrap: anywhere;
+}
+
+.simbolo-info p {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+#Enquanto {
+    text-align: justify;
+}
+
+/* MANIFESTO NO CELULAR */
+
+@media (max-width: 800px) {
+    .manifesto-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .manifesto-texto,
+    .simbolos-luta {
+        grid-column: 1;
+    }
+
+    .simbolos-luta {
+        grid-row: auto;
+        position: static;
+    }
+
+    .simbolo img {
+        height: 160px;
+        object-fit: contain;
+        object-position: center;
+    }
+}
+
+
+
+
+```css
+.faixas-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 40px;
+}
+
+.faixa {
+    display: flex;
+    gap: 24px;
+    padding: 26px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.035);
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.faixa:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.45);
+}
+
+.faixa-numero {
+    font-size: 28px;
+    font-weight: 800;
+    opacity: 0.45;
+    min-width: 42px;
+}
+
+.faixa-info {
+    flex: 1;
+}
+
+.faixa-info h3 {
+    margin: 0 0 8px;
+    font-size: 23px;
+    text-transform: uppercase;
+}
+
+.faixa-artista {
+    margin-bottom: 16px;
+    opacity: 0.65;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.faixa-info p:not(.faixa-artista) {
+    line-height: 1.8;
+    max-width: 760px;
+}
+
+.faixa-info a {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 5px;
+}
+
+@media (max-width: 600px) {
+    .faixa {
+        gap: 14px;
+        padding: 18px;
+    }
+
+    .faixa-numero {
+        font-size: 21px;
+        min-width: 28px;
+    }
+
+    .faixa-info h3 {
+        font-size: 18px;
+    }
+}
+
+
+#Star{
+    color: red;
+
+
+}
